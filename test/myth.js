@@ -29,7 +29,7 @@ describe('duo-myth', function() {
   it('should pass options through', function(done) {
     Duo(__dirname)
       .use(myth({ compress: true }))
-      .entry('body {\n\tbackground: blue;\n}', 'css')
+      .src('body {\n\tbackground: blue;\n}')
       .run(function(err, css) {
         if (err) return done(err);
         assert('body{background:blue;}' == css);
